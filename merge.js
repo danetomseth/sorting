@@ -1,15 +1,4 @@
-function mergeSort (array) {
-	if(array.length < 2) {
-		return array;
-	}
-	var midPoint = Math.floor(array.length / 2);
-	var leftArray = array.slice(0,midPoint);
-	var rightArray = array.slice(midPoint);
-	return mergeArrays(mergeSort(leftArray), mergeSort(rightArray));
-}
-
-
-function mergeArrays (left, right) {
+function merge (left, right) {
 	var mergedArr = [];
 	leftCount = 0;
 	rightCount = 0;
@@ -23,4 +12,3 @@ function mergeArrays (left, right) {
 	}
 	return mergedArr.concat(left.slice(leftCount)).concat(right.slice(rightCount));
 }
-
